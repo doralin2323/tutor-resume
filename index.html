@@ -710,13 +710,35 @@
         .nav {
           align-items: flex-start;
           flex-direction: column;
-          padding: var(--space-3) 0;
+          gap: var(--space-3);
+          padding: var(--space-3) 0 var(--space-4);
         }
 
         .nav-links {
+          display: flex;
+          gap: var(--space-2);
           width: 100%;
           overflow-x: auto;
-          padding-bottom: 2px;
+          padding: 0 0 var(--space-1);
+          -webkit-overflow-scrolling: touch;
+          scrollbar-width: none;
+        }
+
+        .nav-links::-webkit-scrollbar {
+          display: none;
+        }
+
+        .nav-links a,
+        .nav-links a.button {
+          flex: 0 0 auto;
+          min-width: max-content;
+          min-height: 40px;
+          white-space: nowrap;
+        }
+
+        .nav-links a:not(.button) {
+          border: 1px solid var(--line);
+          background: rgba(255, 255, 255, 0.72);
         }
 
         .hero,
@@ -750,6 +772,27 @@
       @media (max-width: 560px) {
         .page {
           width: min(100% - 24px, 1120px);
+        }
+
+        .topbar {
+          position: static;
+        }
+
+        .brand-mark {
+          width: 44px;
+          height: 44px;
+          font-size: 1rem;
+        }
+
+        .brand {
+          font-size: 1.25rem;
+        }
+
+        .nav-links a,
+        .nav-links a.button {
+          min-height: 38px;
+          padding: 0 var(--space-3);
+          font-size: 0.92rem;
         }
 
         h1 {
